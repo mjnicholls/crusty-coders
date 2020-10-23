@@ -1,0 +1,41 @@
+
+<div class="container">
+    <h1>All Users</h1>
+    <div class="mt-5">
+        <div class="table-responsive-md m-auto">
+            <table class="table mt-5 m-auto">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"><p class="white">username</p></th>
+                        <th scope="col"><p class="white">Human name</p></th>
+                        <th scope="col"><p class="white">Address</p></th>
+                        <th scope="col"><p class="white">Postcode</p></th>
+                        <th scope="col"><p class="white">City</p></th>
+                        <th scope="col"><p class="white">Date Registered</p></th>
+                        <th scope="col"><p class="white">Edit</p></th>
+                        <th scope="col"><p class="white">Delete</p></th>
+                    </tr>
+                </thead>
+                <% results.forEach(function(user) { %>
+                    <tbody>
+                        <tr>
+                            <td><img src="/img/profile.png" alt="" class="rounded-circle" height="60" width="60">
+                            </td>
+                            <td class="text-small"><%= user.username %></td>
+                            <td class="text-small"><%= user.fullname %></td>
+                            <td><%= user.address%>, <%= user.address2%></td>
+                            <td><%= user.postcode %></td>
+                            <td><%= user.city %></td>
+                            <td><%= user.date.toDateString() %></td>
+                            <td><a href='./edit/<%= user._id %>'>Edit</a></td>
+                            <td><a href='./destroy/<%= user._id %>'>Delete</a> </td>
+                        </tr>
+                    </tbody>
+                    <% }); %>
+            </table>
+            </div>
+            </div>
+            </div>
+            
+            

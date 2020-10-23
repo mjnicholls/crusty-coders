@@ -1,0 +1,20 @@
+<h1>What are you looking for, old dear?</h1>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Matching result</th>
+      <th scope="col">Where?</th>
+    </tr>
+  </thead>
+  <% for(var i=0; i < question.length; i++) { %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= question[i].term %></th>
+      <td><%= question[i].help %></td>
+    </tr>
+  </tbody>
+  <% } %>
+</table>
+<br>
+<h3>No results? Not what you wanted? Try browsing!</h3>

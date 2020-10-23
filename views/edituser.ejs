@@ -1,0 +1,79 @@
+
+ <% if (typeof successMsg != 'undefined' && successMsg) { %>
+    <div class="alert alert-success"><%- successMsg %></div>
+    <% } else if(typeof errorMsg != 'undefined' && errorMsg) { %>
+            <div class="alert alert-danger"><%- errorMsg %></div>
+            <% } %>
+
+<h1>Edit your profile</h1>
+<br>
+
+<form method="post" role="form" action="" name="form1">
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-3">
+        <label for="inputEmail4">Email</label>
+        <input class="form-control" type="text" name="email" id="email" value="<% if (typeof users != 'undefined') { %><%= users.email %><% } %>" />
+      </div>
+      <div class="form-group col-md-4 mb-3">
+       <label for="inputFullname">Full Name</label>
+       <input class="form-control" type="text" name="fullname" id="fullname" value="<% if (typeof users != 'undefined') { %><%= users.fullname %><% } %>" />
+     </div>
+      <div class="form-group col-md-4 mb-3">
+        <label for="inputPassword4">Password</label>
+        <input class="form-control" type="text" name="password" id="password" value="<% if (typeof users != 'undefined') { %><%= users.password %><% } %>" />
+      </div>
+    </div>
+    <div class="form row">
+      <div class="form-group col-md-4 mb-3">
+        <label for="inputUsername">Username</label>
+        <input class="form-control" type="text" name="username" id="username" value="<% if (typeof users != 'undefined') { %><%= users.username %><% } %>" />
+      </div>
+ 
+     <div class="form-group col-md-4 mb-3">
+      <label for="inputAddress">Address</label>
+      <input class="form-control" type="text" name="address" id="address" value="<% if (typeof users != 'undefined') { %><%= users.address %><% } %>"/>
+      </div>
+    
+    
+      <div class="form-group col-md-4 mb-3">
+      <label for="inputAddress2">Address2</label>
+      <input class="form-control" type="text" name="address2" id="address2" value="<% if (typeof users != 'undefined') { %><%= users.address2 %><% } %>" />
+    </div>
+    </div>
+    <div class="form row">
+     <div class="form-group col-md-4 mb-3">
+     <label for="inputAddress2">City</label>
+     <input class="form-control" type="text" name="city" id="city" value="<% if (typeof users != 'undefined') { %><%= users.city %><% } %>" />
+   </div>
+    
+   <div class="form-group col-md-4 mb-3">
+        <label for="inputCity">Postcode</label>
+        <input class="form-control" type="text" name="postcode" id="postcode" value="<% if (typeof users != 'undefined') { %><%= users.postcode %><% } %>" />
+      </div>
+    </div>
+
+      <div class="form row">
+        <div class="form-group col-md-6">
+     <label for="exampleFormControlTextarea1">About You</label>
+     <input class="form-control"
+     type="text"
+     name="profile"
+     id="profile"
+     value="<% if (typeof users != 'undefined') { %><%= users.profile %><% } %>"
+     rows="3"></input>
+   </div>
+ </div>
+
+   
+    
+    <br>
+    <div class="form row">
+        <div class="form-group col-md-4 mb-3">
+        <button type="submit" class="btn btn-primary">Update!</button>
+    </div>
+    
+                </div>
+  </form>
+  
+  <button type="submit" class="btn btn-primary" onclick="window.location='http://localhost:5000/dashboard'">Back to my profile!</button>
+ 
